@@ -1,30 +1,13 @@
-// Define the Teacher interface
+// Task 1: Teacher interface
 interface Teacher {
-  readonly firstName: string; // only modifiable at initialization
-  readonly lastName: string; // only modifiable at initialization
-  fullTimeEmployee: boolean; // always defined
-  yearsOfExperience?: number; // optional
-  location: string; // always defined
-  [key: string]: any; // allow any additional property
+  readonly firstName: string;
+  readonly lastName: string;
+  fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
+  location: string;
+  [key: string]: any;
 }
 
-// Example teachers
-const teacher1: Teacher = {
-  firstName: "Alice",
-  lastName: "Johnson",
-  fullTimeEmployee: true,
-  location: "New York",
-  yearsOfExperience: 5,
-};
-
-const teacher2: Teacher = {
-  firstName: "Bob",
-  lastName: "Smith",
-  fullTimeEmployee: false,
-  location: "London",
-};
-
-// Add any extra property like 'contract'
 const teacher3: Teacher = {
   firstName: "John",
   lastName: "Doe",
@@ -35,19 +18,32 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
-// Interface describing the constructor parameters
+// Task 1: Directors interface
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+const director1: Directors = {
+  firstName: "John",
+  lastName: "Doe",
+  fullTimeEmployee: true,
+  location: "London",
+  numberOfReports: 17,
+};
+
+console.log(director1);
+
+// Task 4: StudentClass interface and class
 interface StudentConstructor {
   firstName: string;
   lastName: string;
 }
 
-// Interface describing the class methods
 interface StudentInterface {
   workOnHomework(): string;
   displayName(): string;
 }
 
-// Implement the class
 class StudentClass implements StudentInterface {
   firstName: string;
   lastName: string;
@@ -66,8 +62,9 @@ class StudentClass implements StudentInterface {
   }
 }
 
-// Example usage
-const student = new StudentClass({ firstName: "John", lastName: "Doe" });
-
-console.log(student.displayName()); // Output: John
-console.log(student.workOnHomework()); // Output: Currently working
+const student1 = new StudentClass({
+  firstName: "Guillaume",
+  lastName: "Salva",
+});
+console.log(student1.displayName()); // Guillaume
+console.log(student1.workOnHomework()); // Currently working
