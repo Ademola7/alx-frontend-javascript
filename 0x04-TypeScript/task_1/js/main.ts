@@ -7,7 +7,7 @@ interface Teacher {
   [propName: string]: any;
 }
 
-interface Directors extends Teacher {
+interface Director extends Teacher {
   numberOfReports: number;
 }
 
@@ -38,7 +38,7 @@ class StudentClass implements StudentClassInterface {
   }
 
   workOnHomework(): string {
-    return 'Currently working';
+    return "Currently working";
   }
 
   displayName(): string {
@@ -47,19 +47,19 @@ class StudentClass implements StudentClassInterface {
 }
 
 const teacher3: Teacher = {
-  firstName: 'John',
+  firstName: "John",
   fullTimeEmployee: false,
-  lastName: 'Doe',
-  location: 'London',
+  lastName: "Doe",
+  location: "London",
   contract: false,
 };
 
 console.log(teacher3);
 
-const director1: Directors = {
-  firstName: 'John',
-  lastName: 'Doe',
-  location: 'London',
+const director1: Director = {
+  firstName: "John",
+  lastName: "Doe",
+  location: "London",
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
