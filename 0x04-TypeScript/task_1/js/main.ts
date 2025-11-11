@@ -15,9 +15,9 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
+function printTeacher(firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
-};
+}
 
 interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
@@ -38,7 +38,7 @@ class StudentClass implements StudentClassInterface {
   }
 
   workOnHomework(): string {
-    return "Currently working";
+    return 'Currently working';
   }
 
   displayName(): string {
@@ -47,19 +47,19 @@ class StudentClass implements StudentClassInterface {
 }
 
 const teacher3: Teacher = {
-  firstName: "John",
+  firstName: 'John',
   fullTimeEmployee: false,
-  lastName: "Doe",
-  location: "London",
+  lastName: 'Doe',
+  location: 'London',
   contract: false,
 };
 
 console.log(teacher3);
 
 const director1: Directors = {
-  firstName: "John",
-  lastName: "Doe",
-  location: "London",
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
